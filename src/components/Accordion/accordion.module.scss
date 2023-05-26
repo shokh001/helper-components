@@ -1,0 +1,104 @@
+.accordion {
+  padding: 30px 0;
+  background-color: var(--white);
+  border-radius: var(--b-radius);
+  cursor: pointer;
+  height: fit-content;
+  border-top: 1px solid #c8c8c8;
+
+  &__hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    p {
+      font-style: normal;
+      font-weight: 500;
+      font-size: 26px;
+      line-height: 140%;
+      color: #1e1e1e;
+    }
+
+    .icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #fff;
+      position: relative;
+
+      svg {
+        transition: all 0.2s linear;
+        width: 24px;
+        height: 24px;
+      }
+
+      .rotate {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  &__content {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: #6d6d6d;
+    width: 70%;
+    opacity: 0;
+    z-index: -1;
+    transition: all 0.1s linear;
+  }
+
+  &.active {
+    .accordion__content {
+      margin-top: 13px;
+      opacity: 1;
+      z-index: 1;
+    }
+  }
+
+  @media (max-width: 1200px) {
+    padding: 20px 0;
+
+    &__hero {
+
+      p {
+        font-size: 20px;
+        line-height: 24px;
+      }
+
+      .icon {
+        width: 44px;
+        height: 44px;
+
+        svg {
+          width: 20px;
+          height: 20px;
+        }
+      }
+    }
+
+    &__content {
+      font-size: 16px;
+      line-height: 150%;
+    }
+  }
+
+  @media (max-width: 800px  ) {
+    &__hero {
+      p {
+        width: 80%;
+        font-size: 18px;
+        line-height: 21px;
+      }
+    }
+
+    &__content {
+      width: 100%;
+    }
+  }
+}

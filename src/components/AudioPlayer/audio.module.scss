@@ -1,0 +1,91 @@
+.audioPlayer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: 20px;
+    max-width: 300px;
+    .controls {
+        width: fit-content;
+        width: 36px;
+        height: 36px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @media (max-width: 1200px) {
+            width: 24px;
+            height: 24px;
+        }
+
+        svg {
+            width: 36px;
+            height: 36px;
+            cursor: pointer;
+
+            @media (max-width: 1200px) {
+                width: 24px;
+                height: 24px;
+            }
+        }
+
+
+    }
+
+    .progress_bar {
+        width: 100%;
+        display: flex;
+        align-items: center;
+
+        .bar {
+            width: 100%;
+
+        }
+
+    }
+
+    .volume {
+        width: fit-content;
+        position: relative;
+        width: 36px;
+        height: 36px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @media (max-width: 1200px) {
+            width: 24px;
+            height: 24px;
+        }
+
+        svg {
+            width: 36px;
+            height: 36px;
+            cursor: pointer;
+
+            @media (max-width: 1200px) {
+                width: 24px;
+                height: 24px;
+            }
+        }
+
+        .range {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 13px 8px;
+            background-color: #fff;
+            border: 1px solid #F1F1F1;
+            border-radius: 6px;
+            // transform: rotate(-90deg);
+            position: absolute;
+            left: 2px;
+            top: -104px;
+            width: 30px;
+            height: 100px;
+
+            @media (max-width:1200px) {
+      left: -2px;
+            }
+        }
+    }
+}

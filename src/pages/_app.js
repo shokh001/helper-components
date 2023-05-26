@@ -1,5 +1,8 @@
-import '@/styles/globals.css'
+import "@/styles/globals.scss";
 
 export default function App({ Component, pageProps }) {
-  return <Component {...pageProps} />
+  return <div>
+    <Component {...pageProps} />
+    <div id="modal-root"></div>
+  </div>;
 }

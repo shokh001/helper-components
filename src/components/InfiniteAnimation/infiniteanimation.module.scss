@@ -1,0 +1,141 @@
+.infiniteAnimation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+  width: 100%;
+
+  @keyframes scroll {
+    0% {
+      left: 0;
+    }
+
+    100% {
+      left: -100%;
+    }
+  }
+
+  .wrapper {
+    width: 200%;
+    overflow: hidden;
+    position: relative;
+    height: 60px;
+    
+    &::before {
+      position: absolute;
+      content: '';
+      left: -20px;
+      top: -10px;
+      border-radius: 30%;
+      width: 40px;
+      height: 130%;
+      opacity: 0.99;
+      filter: blur(3px);
+      background-color: #FBFBFB;
+      z-index: 9;
+    }
+    &::after {
+      position: absolute;
+      content: '';
+      right: -20px;
+      top: -10px;
+      border-radius: 30%;
+      width: 40px;
+      height: 130%;
+      opacity: 0.99;
+      filter: blur(3px);
+      background-color: #FBFBFB;
+      z-index: 9;
+    }     
+
+    &__inner {
+      height: 60px;
+      width: 200%;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      position: absolute;
+      left: 0;
+      gap: 50px;
+
+      .item {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        width: fit-content;
+
+      }
+    }
+
+    .animate {
+      animation: scroll 20s linear infinite;
+    }
+  }
+
+  @media (max-width: 1200px) {
+    .wrapper {
+      width: 200%;
+      overflow: hidden;
+      position: relative;
+      height: 60px;
+      
+      &::before {
+        position: absolute;
+        content: '';
+        left: -25px;
+        top: 0;
+        border-radius: 30%;
+        width: 40px;
+        height: 120%;
+        opacity: 0.99;
+        filter: blur(3px);
+        background-color: #FBFBFB;
+        z-index: 9;
+      }
+      &::after {
+        position: absolute;
+        content: '';
+        right: -25px;
+        top: 0;
+        border-radius: 30%;
+        width: 40px;
+        height: 120%;
+        opacity: 0.99;
+        filter: blur(3px);
+        background-color: #FBFBFB;
+        z-index: 9;
+      }     
+  
+      &__inner {
+        height: 60px;
+        width: 200%;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        position: absolute;
+        left: 0;
+        gap: 20px;
+  
+        .item {
+          display: flex;
+          justify-content: center;
+          align-items: flex-start;
+          width: fit-content;
+          
+
+          svg {
+
+          }
+        }
+      }
+  
+      .animate {
+        animation: scroll 20s linear infinite;
+        @media (max-width: 800px) {
+        animation: scroll 10s linear infinite;
+          
+        }
+      }
+    }
+  }
+}
